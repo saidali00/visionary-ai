@@ -7,6 +7,7 @@ const nav = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/products", label: "Products" },
+  { to: "/projects", label: "Projects" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -38,12 +39,14 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link
-            to="/products"
+          <a
+            href="https://wadiai.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-brand px-5 py-2 text-sm font-semibold text-primary-foreground glow hover:opacity-90 transition-opacity"
           >
             Try WadiAI
-          </Link>
+          </a>
         </nav>
 
         <button

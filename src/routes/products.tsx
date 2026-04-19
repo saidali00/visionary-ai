@@ -122,12 +122,14 @@ function ProductsPage() {
           <p className="text-muted-foreground mb-8">
             Join the WadiAI beta and shape the future of intelligent systems.
           </p>
-          <Link
-            to="/contact"
+          <a
+            href="https://wadiai.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3 text-sm font-semibold text-primary-foreground glow"
           >
-            Join the Beta <ArrowRight className="h-4 w-4" />
-          </Link>
+            Try WadiAI Now <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </section>
 

@@ -81,6 +81,20 @@ function AboutPage() {
               We are just getting started.
             </p>
           </div>
+
+          <div className="mt-12 glass rounded-2xl p-8 md:p-10 text-center">
+            <p className="text-xs font-semibold tracking-[0.3em] text-primary mb-3">FOUNDER</p>
+            <h3 className="font-display text-2xl md:text-3xl font-bold mb-2">Aakash Bashir</h3>
+            <p className="text-primary font-medium mb-5">CEO &amp; Founder · AI Architect</p>
+            <a
+              href="https://portfoliobyakash.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-primary-foreground glow hover:opacity-90 transition"
+            >
+              View Portfolio →
+            </a>
+          </div>
         </div>
       </section>
 
