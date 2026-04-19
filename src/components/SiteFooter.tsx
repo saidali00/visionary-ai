@@ -23,17 +23,34 @@ export function SiteFooter() {
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li><Link to="/about" className="hover:text-primary">About</Link></li>
             <li><Link to="/products" className="hover:text-primary">Products</Link></li>
+            <li><Link to="/projects" className="hover:text-primary">Projects</Link></li>
             <li><Link to="/contact" className="hover:text-primary">Contact</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="font-display text-sm font-semibold text-foreground mb-4">Products</h4>
+          <h4 className="font-display text-sm font-semibold text-foreground mb-4">Ecosystem</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>WadiAI Chat</li>
-            <li>Image Generator</li>
-            <li>Deep Thinking AI</li>
-            <li>Developer API</li>
+            <li>
+              <a href="https://wadiai.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+                WadiAI
+              </a>
+            </li>
+            <li>
+              <a href="https://kashvega.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+                Kashvega
+              </a>
+            </li>
+            <li>
+              <a href="https://buzzflixearnmoney.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+                Buzzflix
+              </a>
+            </li>
+            <li>
+              <a href="https://brightpath-accademy.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+                BrightPath Academy
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -43,7 +60,15 @@ export function SiteFooter() {
             © {new Date().getFullYear()} Xenonymous. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
-            Founded by <span className="text-foreground">Aakash Bashir</span>
+            Founded by{" "}
+            <a
+              href="https://portfoliobyakash.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground hover:text-primary underline-offset-4 hover:underline"
+            >
+              Aakash Bashir
+            </a>
           </p>
         </div>
       </div>

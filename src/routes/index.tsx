@@ -92,17 +92,19 @@ function HomePage() {
             companion for thinking, creating, and solving.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4 animate-fade-up">
-            <Link
-              to="/products"
+            <a
+              href="https://wadiai.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3 text-sm font-semibold text-primary-foreground glow hover:opacity-90 transition"
             >
               Try WadiAI <ArrowRight className="h-4 w-4" />
-            </Link>
+            </a>
             <Link
-              to="/about"
+              to="/projects"
               className="inline-flex items-center gap-2 rounded-full glass glass-hover px-7 py-3 text-sm font-semibold text-foreground"
             >
-              Our Vision
+              See Projects
             </Link>
           </div>
         </div>
@@ -167,11 +169,19 @@ function HomePage() {
           </div>
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-2">Aakash Bashir</h2>
           <p className="text-primary font-medium mb-6">CEO & Founder · AI Architect</p>
-          <p className="max-w-2xl mx-auto text-muted-foreground leading-relaxed">
+          <p className="max-w-2xl mx-auto text-muted-foreground leading-relaxed mb-8">
             “Intelligence isn't a product — it's an architecture. At Xenonymous, we're
             designing systems that don't just answer questions, but expand the way
             humans think, create, and decide.”
           </p>
+          <a
+            href="https://portfoliobyakash.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full glass glass-hover px-6 py-2.5 text-sm font-semibold text-foreground"
+          >
+            View Portfolio <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </section>
 
@@ -185,9 +195,14 @@ function HomePage() {
             Join the early builders shaping the next era of intelligent systems.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/products" className="rounded-full bg-brand px-7 py-3 text-sm font-semibold text-primary-foreground glow">
+            <a
+              href="https://wadiai.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-brand px-7 py-3 text-sm font-semibold text-primary-foreground glow"
+            >
               Try WadiAI
-            </Link>
+            </a>
             <Link to="/contact" className="rounded-full glass glass-hover px-7 py-3 text-sm font-semibold">
               Build with Us
             </Link>
