@@ -14,8 +14,10 @@ import {
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { AnimatedLogo } from "@/components/AnimatedLogo";
+import { FingerprintScanner } from "@/components/FingerprintScanner";
+import { Reveal, RevealStagger, RevealItem } from "@/components/Reveal";
 import heroImg from "@/assets/hero-neural.jpg";
-import logo from "@/assets/xenonymous-logo.png";
 import founderImg from "@/assets/founder-aakash.jpg";
 
 export const Route = createFileRoute("/")({
@@ -72,42 +74,53 @@ function HomePage() {
           height={1080}
           className="absolute inset-0 h-full w-full object-cover opacity-30 mix-blend-screen"
         />
-        <div className="relative mx-auto max-w-7xl px-6 pt-24 pb-32 md:pt-36 md:pb-44 text-center">
-          <div className="flex justify-center mb-8 animate-float">
-            <img src={logo} alt="Xenonymous" className="h-28 w-28 md:h-36 md:w-36 drop-shadow-[0_0_60px_rgba(56,189,248,0.5)]" />
-          </div>
-          <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 mb-6 animate-fade-up">
+        <div className="relative mx-auto max-w-7xl px-6 pt-20 pb-24 md:pt-28 md:pb-36 text-center">
+          <Reveal className="flex justify-center mb-8">
+            <AnimatedLogo size={180} />
+          </Reveal>
+          <Reveal delay={0.1} className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 mb-6">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
             <span className="text-xs font-medium tracking-wide text-muted-foreground">
               Intelligence • Innovation • Future
             </span>
-          </div>
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] animate-fade-up">
-            Building the Next Generation
-            <br />
-            of <span className="text-gradient">Artificial Intelligence</span>
-          </h1>
-          <p className="mt-8 max-w-2xl mx-auto text-lg text-muted-foreground animate-fade-up">
-            Xenonymous engineers intelligent systems that enhance human potential.
-            Meet <span className="text-foreground font-medium">WadiAI</span> — your intelligent
-            companion for thinking, creating, and solving.
-          </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4 animate-fade-up">
-            <a
-              href="https://wadiai.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3 text-sm font-semibold text-primary-foreground glow hover:opacity-90 transition"
-            >
-              Try WadiAI <ArrowRight className="h-4 w-4" />
-            </a>
-            <Link
-              to="/projects"
-              className="inline-flex items-center gap-2 rounded-full glass glass-hover px-7 py-3 text-sm font-semibold text-foreground"
-            >
-              See Projects
-            </Link>
-          </div>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05]">
+              Building the Next Generation
+              <br />
+              of <span className="text-gradient">Artificial Intelligence</span>
+            </h1>
+          </Reveal>
+          <Reveal delay={0.35}>
+            <p className="mt-8 max-w-2xl mx-auto text-lg text-muted-foreground">
+              Xenonymous engineers intelligent systems that enhance human potential.
+              Meet <span className="text-foreground font-medium">WadiAI</span> — your intelligent
+              companion for thinking, creating, and solving.
+            </p>
+          </Reveal>
+          <Reveal delay={0.5}>
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
+              <a
+                href="https://wadiai.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3 text-sm font-semibold text-primary-foreground glow hover:opacity-90 transition"
+              >
+                Try WadiAI <ArrowRight className="h-4 w-4" />
+              </a>
+              <Link
+                to="/projects"
+                className="inline-flex items-center gap-2 rounded-full glass glass-hover px-7 py-3 text-sm font-semibold text-foreground"
+              >
+                See Projects
+              </Link>
+            </div>
+          </Reveal>
+
+          {/* Fingerprint gateway */}
+          <Reveal delay={0.7} className="mt-16 flex flex-col items-center">
+            <FingerprintScanner />
+          </Reveal>
         </div>
       </section>
 
