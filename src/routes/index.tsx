@@ -16,6 +16,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import heroImg from "@/assets/hero-neural.jpg";
 import logo from "@/assets/xenonymous-logo.png";
+import founderImg from "@/assets/founder-aakash.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -164,8 +165,15 @@ function HomePage() {
       <section className="relative py-28 px-6">
         <div className="mx-auto max-w-4xl glass rounded-3xl p-10 md:p-16 text-center">
           <p className="text-xs font-semibold tracking-[0.3em] text-primary mb-3">FOUNDER</p>
-          <div className="mx-auto mb-8 h-28 w-28 rounded-full bg-brand flex items-center justify-center font-display text-4xl font-bold text-primary-foreground glow animate-pulse-glow">
-            AB
+          <div className="mx-auto mb-8 h-32 w-32 rounded-full p-[3px] bg-brand glow animate-pulse-glow">
+            <img
+              src={founderImg}
+              alt="Aakash Bashir, Founder of Xenonymous"
+              width={256}
+              height={256}
+              loading="lazy"
+              className="h-full w-full rounded-full object-cover"
+            />
           </div>
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-2">Aakash Bashir</h2>
           <p className="text-primary font-medium mb-6">CEO & Founder · AI Architect</p>
