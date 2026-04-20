@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, LogIn, LogOut } from "lucide-react";
-import logo from "@/assets/xenonymous-logo.png";
+import { AnimatedLogo } from "@/components/AnimatedLogo";
 import { useAuth } from "@/hooks/useAuth";
 
 const nav = [
@@ -40,11 +40,7 @@ export function SiteHeader() {
       <header className="sticky top-0 z-50 glass border-b border-border/50">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <Link to="/" className="flex items-center gap-3 group">
-            <img
-              src={logo}
-              alt="Xenonymous logo"
-              className="h-10 w-10 object-contain transition-transform group-hover:scale-110"
-            />
+            <AnimatedLogo size={48} />
             <span className="font-display text-lg font-bold tracking-widest text-gradient">
               XENONYMOUS
             </span>
