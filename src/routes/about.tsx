@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Target, Compass, ShieldCheck, Sparkles } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import founderImg from "@/assets/founder-aakash.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -84,6 +85,16 @@ function AboutPage() {
 
           <div className="mt-12 glass rounded-2xl p-8 md:p-10 text-center">
             <p className="text-xs font-semibold tracking-[0.3em] text-primary mb-3">FOUNDER</p>
+            <div className="mx-auto mb-6 h-32 w-32 rounded-full p-[3px] bg-brand glow">
+              <img
+                src={founderImg}
+                alt="Aakash Bashir, Founder of Xenonymous"
+                width={256}
+                height={256}
+                loading="lazy"
+                className="h-full w-full rounded-full object-cover"
+              />
+            </div>
             <h3 className="font-display text-2xl md:text-3xl font-bold mb-2">Aakash Bashir</h3>
             <p className="text-primary font-medium mb-5">CEO &amp; Founder · AI Architect</p>
             <a

@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Mail, MessageSquare, Send } from "lucide-react";
+import { Mail, MessageSquare, Send, Loader2 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -25,6 +26,32 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (loading) return;
+    setLoading(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data?.error || "Failed to send message");
+      }
+      setSent(true);
+      toast.success("Message sent! We'll be in touch soon.");
+      setForm({ name: "", email: "", subject: "", message: "" });
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -66,19 +93,16 @@ function ContactPage() {
             </div>
           </div>
 
-          <form
-            className="md:col-span-3 glass rounded-2xl p-8 space-y-5"
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSent(true);
-            }}
-          >
+          <form className="md:col-span-3 glass rounded-2xl p-8 space-y-5" onSubmit={handleSubmit}>
             <div className="grid gap-5 md:grid-cols-2">
               <div>
                 <label className="block text-xs font-semibold tracking-wider text-muted-foreground mb-2">NAME</label>
                 <input
                   required
                   type="text"
+                  maxLength={100}
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
                   className="w-full rounded-lg bg-input/50 border border-border px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
@@ -87,6 +111,9 @@ function ContactPage() {
                 <input
                   required
                   type="email"
+                  maxLength={255}
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
                   className="w-full rounded-lg bg-input/50 border border-border px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
@@ -95,6 +122,9 @@ function ContactPage() {
               <label className="block text-xs font-semibold tracking-wider text-muted-foreground mb-2">SUBJECT</label>
               <input
                 type="text"
+                maxLength={200}
+                value={form.subject}
+                onChange={(e) => setForm({ ...form, subject: e.target.value })}
                 className="w-full rounded-lg bg-input/50 border border-border px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
@@ -103,15 +133,28 @@ function ContactPage() {
               <textarea
                 required
                 rows={5}
+                maxLength={5000}
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
                 className="w-full rounded-lg bg-input/50 border border-border px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none"
               />
             </div>
             <button
               type="submit"
-              className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3 text-sm font-semibold text-primary-foreground glow hover:opacity-90 transition"
+              disabled={loading}
+              className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3 text-sm font-semibold text-primary-foreground glow hover:opacity-90 transition disabled:opacity-60"
             >
-              {sent ? "Message sent ✓" : "Send Message"}
-              {!sent && <Send className="h-4 w-4" />}
+              {loading ? (
+                <>
+                  Sending… <Loader2 className="h-4 w-4 animate-spin" />
+                </>
+              ) : sent ? (
+                "Message sent ✓"
+              ) : (
+                <>
+                  Send Message <Send className="h-4 w-4" />
+                </>
+              )}
             </button>
           </form>
         </div>
