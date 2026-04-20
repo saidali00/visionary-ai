@@ -127,7 +127,7 @@ function HomePage() {
       {/* PRODUCTS */}
       <section className="relative py-28 px-6">
         <div className="mx-auto max-w-7xl">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <Reveal className="text-center max-w-2xl mx-auto mb-16">
             <p className="text-xs font-semibold tracking-[0.3em] text-primary mb-3">PRODUCTS</p>
             <h2 className="font-display text-3xl md:text-5xl font-bold">
               The <span className="text-gradient">WadiAI</span> Ecosystem
@@ -135,42 +135,46 @@ function HomePage() {
             <p className="mt-4 text-muted-foreground">
               A unified suite of intelligent systems — modular, multimodal, and built to scale.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <RevealStagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {products.map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="glass glass-hover rounded-2xl p-7">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand glow mb-5">
-                  <Icon className="h-6 w-6 text-primary-foreground" />
+              <RevealItem key={title}>
+                <div className="glass glass-hover rounded-2xl p-7 h-full">
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand glow mb-5">
+                    <Icon className="h-6 w-6 text-primary-foreground" />
+                  </div>
+                  <h3 className="font-display text-xl font-semibold mb-2">{title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
                 </div>
-                <h3 className="font-display text-xl font-semibold mb-2">{title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
-              </div>
+              </RevealItem>
             ))}
-          </div>
+          </RevealStagger>
         </div>
       </section>
 
       {/* FEATURES */}
       <section className="relative py-28 px-6 bg-deep">
         <div className="mx-auto max-w-7xl">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <Reveal className="text-center max-w-2xl mx-auto mb-16">
             <p className="text-xs font-semibold tracking-[0.3em] text-primary mb-3">CAPABILITIES</p>
             <h2 className="font-display text-3xl md:text-5xl font-bold">
               Engineered for <span className="text-gradient">scale and depth</span>
             </h2>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          </Reveal>
+          <RevealStagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {features.map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="flex gap-4 p-6 rounded-2xl border border-border/40 hover:border-primary/40 transition">
-                <Icon className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-semibold mb-1">{title}</h3>
-                  <p className="text-sm text-muted-foreground">{desc}</p>
+              <RevealItem key={title}>
+                <div className="flex gap-4 p-6 rounded-2xl border border-border/40 hover:border-primary/40 transition h-full">
+                  <Icon className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-semibold mb-1">{title}</h3>
+                    <p className="text-sm text-muted-foreground">{desc}</p>
+                  </div>
                 </div>
-              </div>
+              </RevealItem>
             ))}
-          </div>
+          </RevealStagger>
         </div>
       </section>
 
