@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, LogIn, LogOut, User as UserIcon } from "lucide-react";
+import { Menu, X, LogIn, LogOut } from "lucide-react";
 import logo from "@/assets/xenonymous-logo.png";
 import { useAuth } from "@/hooks/useAuth";
 
