@@ -180,7 +180,7 @@ function HomePage() {
 
       {/* FOUNDER */}
       <section className="relative py-28 px-6">
-        <div className="mx-auto max-w-4xl glass rounded-3xl p-10 md:p-16 text-center">
+        <Reveal className="mx-auto max-w-4xl glass rounded-3xl p-10 md:p-16 text-center">
           <p className="text-xs font-semibold tracking-[0.3em] text-primary mb-3">FOUNDER</p>
           <div className="mx-auto mb-8 h-32 w-32 rounded-full p-[3px] bg-brand glow animate-pulse-glow">
             <img
@@ -207,12 +207,12 @@ function HomePage() {
           >
             View Portfolio <ArrowRight className="h-4 w-4" />
           </a>
-        </div>
+        </Reveal>
       </section>
 
       {/* CTA */}
       <section className="relative py-28 px-6">
-        <div className="mx-auto max-w-5xl text-center">
+        <Reveal className="mx-auto max-w-5xl text-center">
           <h2 className="font-display text-4xl md:text-6xl font-bold mb-6">
             The future <span className="text-gradient">thinks here</span>.
           </h2>
@@ -232,7 +232,7 @@ function HomePage() {
               Build with Us
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <SiteFooter />
