@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Suspense, useRef } from "react";
+import SpaceAudio from "@/components/SpaceAudio";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Stars, OrbitControls, Float, Sphere, Trail, Text } from "@react-three/drei";
 import { motion } from "framer-motion";
@@ -217,6 +218,7 @@ const concepts = [
 function ExperiencePage() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-black">
+      <SpaceAudio />
       {/* 3D canvas as fixed background */}
       <div className="fixed inset-0 z-0">
         <Canvas camera={{ position: [0, 1.5, 8], fov: 55 }} dpr={[1, 1.5]}>
