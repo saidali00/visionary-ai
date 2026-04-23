@@ -168,7 +168,23 @@ export function SiteHeader() {
           >
             Try WadiAI →
           </a>
+
+          {/* Subscription toggle */}
+          <button
+            onClick={() => setShowPlans(!showPlans)}
+            className="mt-2 mx-1 flex items-center justify-center gap-2 rounded-full border border-primary/40 px-5 py-2.5 text-sm font-semibold text-primary hover:bg-accent/30 transition-colors"
+          >
+            <CreditCard className="h-4 w-4" />
+            {showPlans ? "Hide Plans" : "Subscribe"}
+          </button>
         </nav>
+
+        {/* Subscription Plans Panel */}
+        {showPlans && (
+          <div className="border-t border-border/50 px-4 py-5 overflow-y-auto max-h-[50vh]">
+            <SubscriptionPlans onClose={() => setShowPlans(false)} />
+          </div>
+        )}
 
         {user && (
           <div className="absolute bottom-0 left-0 right-0 border-t border-border/50 px-3 py-4">
