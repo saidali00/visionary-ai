@@ -1,8 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, LogIn, LogOut } from "lucide-react";
+import { Menu, X, LogIn, LogOut, CreditCard } from "lucide-react";
 import { AnimatedLogo } from "@/components/AnimatedLogo";
 import { useAuth } from "@/hooks/useAuth";
+import { SubscriptionPlans } from "@/components/SubscriptionPlans";
 
 const nav = [
   { to: "/", label: "Home" },
