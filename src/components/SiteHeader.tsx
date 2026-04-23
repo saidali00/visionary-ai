@@ -15,6 +15,7 @@ const nav = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [showPlans, setShowPlans] = useState(false);
   const { user, profile, signOut, loading } = useAuth();
 
   // Close drawer on Escape
